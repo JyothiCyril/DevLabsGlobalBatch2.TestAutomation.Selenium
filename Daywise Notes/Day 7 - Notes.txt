@@ -87,3 +87,100 @@ git push -u origin main
 git remote add origin https://github.com/JyothiCyril/EMS.TestAutomation.git
 git branch -M main
 git push -u origin main
+
+***************************************************************************
+
+CICD : Continuous Integration & Continuous Deployment.
+
+Technical Agile.
+
+Why is it called as technical agile.
+
+
+The project development strategy from the conventional model vs Agile model are modified.
+
+In conventional model, the development happends in an non-incremental approach.
+
+
+We also have conventional models like spiral model, where the product development happens in incremental approach on the completion of iteration / increments
+
+
+Requirement gathered (100) 15 days --> Designing (100) - 15Days--> Coding (100: miltiple units created by different developers to meet all 100 requirements : 2000 units of code)--> Unit Testing ( 2000 units)--> Integrate the units into build : 6 months --> Testing (5 months) --> UAT --> Deployment (1 months)
+
+12 months
+
+
+
+Agile model : Developement can be scheduled in fixed duration called SPRINTs / Iterations
+
+Each sprint : 2-4 weeks
+
+2 weeks sprint : 14 calendar days --> 2 sat & 2 sun -4 calendar days : 10 days of durations
+
+Team : Product owner , SCRUM Team / Development Team , SCRUM Master
+
+* Product owner : collate the requirement received from the clients , customer, stakeholder and articulate it into User stories and maintain them into Product Backlog
+
+User stories : requirements explained from the user perspective.
+
+
+*SCRUM Team / Development Team : Developers & Tester : 7+/-2 : 5 /9 
+
+*SCRUM Master : Facilitators / Mentor who wil be tracking the progress of the project and support the SCRUM team to get the work done.
+
+
+SPRINT Meeting:
+Sprint planning : Day 1 (3-5 hours): The velocity : to decide which are the user stories to be developed by end of this sprint 
+Daily stand up
+Sprint Review : Day 14
+Sprint Reterospection : Day 14
+
+(14days - 4days - 1 day - 1day: 8days)
+
+8days : * Everyday there should a development and every day there will be testing done
+
+* A developer and tester are day before and day behind.
+
+What is developed today should be tested tomorrow.
+
+* What is developed today should be integrated to night - > Overnight building.
+
+Implementated automated approach that can pick the code developed by different programmers from the centralized location and further to be integrated as build and also deploy them on different environments. --> Scheduled on the non-business hours / overnight building of product.
+
+Everyday there is development, Everyday integration, Everyday Deployment & Everyday there will be testing done
+
+
+Development & Testing is done in the business hours of a day. Whereas the integration and deployment can be done in non-business hours of a day.
+
+
+Dev Team , Dev ops Team, QA Team
+
+Dev Team :
+----------
+
+1. Develop the unit 
+2. Push the code into GitHub(Developer's gitHub)
+
+
+DevOps Team : Pipeline the CICD engine which has collection of tools that is aligned on a platfrom (Jenkins).
+
+** Dev ops engineer has programmed the below actions on the CICD tool, that can automatically do :
+
+1. Pull the code checked-in by different developers in the project at a scheduled time
+2. code Will be reviewed using static analysis tools to check the quality of code / code coverage etc.
+3. Unit Testing : code is exercised for functionality 
+4. Code integration : unit will be integrated to a build (jar /war/ear etc)
+5. Smoke Testing : Pull the test automation code from QA GitHub for testing the build: Only high level functionalities are tested.
+6. Deployment : Build will be executed on the different environments
+7. Reporting : crystal report created based on build execution.
+
+
+ 
+
+
+
+
+
+
+
+
