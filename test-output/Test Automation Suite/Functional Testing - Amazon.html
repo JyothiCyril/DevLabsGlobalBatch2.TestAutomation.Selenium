@@ -1,0 +1,422 @@
+<html>
+<head>
+<title>TestNG:  Functional Testing - Amazon</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Functional Testing - Amazon</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/6/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Apr 03 19:59:23 IST 2022</td>
+</tr>
+<tr><td>Total time:</td><td>46 seconds (46896 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.qa.testscripts.TC_Amazon_003.validateFooterLinks()'><b>validateFooterLinks</b><br>Test class: com.qa.testscripts.TC_Amazon_003</td>
+<td><div><pre>java.lang.AssertionError: expected [50] but found [52]
+	at com.qa.testscripts.TC_Amazon_003.validateFooterLinks(TC_Amazon_003.java:24)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace296114102", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace296114102'><pre>java.lang.AssertionError: expected [50] but found [52]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:907)
+	at org.testng.Assert.assertEquals(Assert.java:917)
+	at com.qa.testscripts.TC_Amazon_003.validateFooterLinks(TC_Amazon_003.java:24)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>0</td>
+<td>com.qa.testscripts.TC_Amazon_003@209da20d</td></tr>
+<tr>
+<td title='com.qa.testscripts.TC_Amazon_002.searchItem()'><b>searchItem</b><br>Test class: com.qa.testscripts.TC_Amazon_002<br>Parameters: Appliances, Washing machines<br/>
+<a href="#Output-158087274" onClick='toggleBox("Output-158087274", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-158087274" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-158087274">
+The user is not on home page<br/>
+The item is searched<br/>
+AmazonBasics 6.5 kg Fully-Automatic Top Load Washing Machine (Grey/Black, Full Metal body, LED Display)<br/>
+AmazonBasics 8 kg Semi-automatic Washing Machine (with Heavy wash function, White/Blue color)<br/>
+Samsung 6.5 kg Fully-Automatic Top Loading Washing Machine (WA65A4002VS/TL, Imperial Silver, Center Jet Pulsator)<br/>
+Samsung 6.5 Kg 5 Star Inverter Fully-Automatic Top Loading Washing Machine (WA65T4262GG/TL, Light Grey, Wobble technology)<br/>
+Whirlpool 7 Kg 5 Star Semi-Automatic Top Loading Washing Machine (SUPERB ATOM 7.0, Grey Dazzle, TurboScrub Technology)<br/>
+Panasonic Econavi 8 Kg 5 Star Built-In Heater Fully-Automatic Top Loading Washing Machine (NA-F80V9LRB, Silver, Stain Master+)<br/>
+Samsung 6.0 Kg 5 Star Semi-Automatic Top Loading Washing Machine (WT60R2000LL/TL, Light Grey, Double Storm Pulsator)<br/>
+LG 6.5 Kg 5 Star Smart Inverter Fully-Automatic Top Loading Washing Machine (T65SKSF4Z, Middle Free Silver)<br/>
+IFB 7 Kg 5 Star Fully-Automatic Front Loading Washing Machine (Neo Diva BX, White, In-Built Heater)<br/>
+IFB 6 Kg 5 Star Fully-Automatic Front Loading Washing Machine (Diva Plus BX, White, Inbuilt Heater, Ball Valve Technology)<br/>
+Samsung 6.0 Kg Inverter 5 Star Fully-Automatic Front Loading Washing Machine (WW60R20GLMA/TL, White, Hygiene Steam)<br/>
+Whirlpool 7.5 Kg 5 Star Semi-Automatic Top Loading Washing Machine (ACE 7.5 SUPREME, Grey Dazzle)<br/>
+Samsung 7 Kg 5 Star Inverter Fully-Automatic Top Loading Washing Machine (WA70T4262GS/TL, Imperial Silver, Wobble technology)<br/>
+Bosch 6 kg 5 Star Inverter Fully Automatic Front Loading Washing Machine with In - built Heater (WLJ2016WIN, White )<br/>
+Whirlpool 6 Kg 5 Star Semi-Automatic Top Loading Washing Machine (SUPERB ATOM 60I, Grey Dazzle)<br/>
+LG 7 kg 5 Star Inverter Fully-Automatic Top Loading Washing Machine (T70SKSF1Z, Middle Free Silver, TurboDrum)<br/>
+Godrej 6.2 Kg Fully-Automatic Top Loading Washing Machine (WT EON 620 A Gp Gr, Grey)<br/>
+Whirlpool 7 Kg 5 Star Royal Plus Fully-Automatic Top Loading Washing Machine (WHITEMAGIC ROYAL PLUS 7.0, Grey, Hard Water Wash)<br/>
+AmazonBasics 6.5 kg Fully-Automatic Top Load Washing Machine (Grey/Black, Full Metal body, LED Display)<br/>
+IFB 8 Kg 5 Star Fully-Automatic Front Loading Washing Machine (Senator WXS, Silver)<br/>
+DMR 46-1218 4.6Kg Top Loading Washing Machine, Blue<br/>
+Panasonic 7 Kg 5 Star Fully-Automatic Top Loading Washing Machine (NA-F70LF1HRB, Grey)<br/>
+Whirlpool 7.5 Kg 5 Star Royal Plus Fully-Automatic Top Loading Washing Machine (WHITEMAGIC ROYAL PLUS 7.5, Grey, Hard Water Wash)<br/>
+Whirlpool 10.5 kg 5 Star Semi-Automatic Top Loading Washing Machine (ACE XL 10.5, Graphite Grey, 3D Scrub Technology)<br/>
+DMR Portable 3 kg Mini Top-Load Washing Machine with Dryer Basket (DMR 30-1208, Black)<br/>
+Samsung 7 kg Fully-Automatic Top Loading Washing Machine (WA70A4002GS/TL, Imperial Silver, Diamond drum)<br/>
+Onida 9.0 kg Top Loading Washer Only (W90W, Lava Red)<br/>
+Amazon Basics 6 Kg Fully Automatic Top Loading Washing machine<br/>
+Samsung 6.5 kg Fully-Automatic Top Loading Washing Machine (WA65A4002VS/TL, Imperial Silver, Center Jet Pulsator)<br/>
+AmazonBasics 14 Place Setting Dishwasher (2021, Silver)<br/>
+AmazonBasics 7 kg Semi Automatic Washing Machine (with Heavy wash function, White/Blue color)<br/>
+Panasonic Econavi 8 Kg 5 Star Built-In Heater Fully-Automatic Top Loading Washing Machine (NA-F80V9LRB, Silver, Stain Master+)<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace158087274", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace158087274'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>5</td>
+<td>com.qa.testscripts.TC_Amazon_002@5ba3f27a</td></tr>
+<tr>
+<td title='com.qa.testscripts.TC_Amazon_002.searchItem()'><b>searchItem</b><br>Test class: com.qa.testscripts.TC_Amazon_002<br>Parameters: Furniture, Wooden Tables<br/>
+<a href="#Output-553583574" onClick='toggleBox("Output-553583574", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-553583574" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-553583574">
+The user is not on home page<br/>
+The item is searched<br/>
+BLUEWUD Noel Engineered Wood Rectangular Shape Coffee Table/Centre Table with Storage (Wenge)<br/>
+DecorNation Lawanya Coffee Table Set of 2 End Side Large And Medium Sized Table | Night Stand Table | Nesting Corner Table | For Piping Hot Breakfast Wood Table With Legs For Living Room Waiting Room Balcony and Office, Brown<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace553583574", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace553583574'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>4</td>
+<td>com.qa.testscripts.TC_Amazon_002@5ba3f27a</td></tr>
+<tr>
+<td title='com.qa.testscripts.TC_Amazon_002.searchItem()'><b>searchItem</b><br>Test class: com.qa.testscripts.TC_Amazon_002<br>Parameters: Electronics, Mobile Phones<br/>
+<a href="#Output-1955652362" onClick='toggleBox("Output-1955652362", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1955652362" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1955652362">
+The user is not on home page<br/>
+The item is searched<br/>
+Samsung Galaxy M12 (Black,6GB RAM, 128GB Storage) 6 Months Free Screen Replacement for Prime<br/>
+Vivo Y73 (Roman Black, 8GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers<br/>
+OPPO A31 (Fantasy White, 6GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers<br/>
+Redmi 9 (Sky Blue, 4GB RAM, 64GB Storage) | 2.3GHz Mediatek Helio G35 Octa core Processor<br/>
+OPPO A31 (Mystery Black, 6GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers<br/>
+Redmi Note 11 (Horizon Blue, 6GB RAM, 64GB Storage)|90Hz FHD+ AMOLED Display | Qualcomm® Snapdragon™ 680-6nm | Alexa Built-in<br/>
+Samsung Galaxy M12 (Blue,4GB RAM, 64GB Storage) 6000 mAh with 8nm Processor | True 48 MP Quad Camera | 90Hz Refresh Rate<br/>
+Redmi Note 11 (Space Black, 6GB RAM, 64GB Storage) | 90Hz FHD+ AMOLED Display | Qualcomm® Snapdragon™ 680-6nm | Alexa Built-in<br/>
+Redmi 9A(Midnight Black 3GB RAM 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery<br/>
+Redmi 10 Prime (Phantom Black 6GB RAM 128GB ROM |Helio G88 with extendable RAM Upto 2GB |FHD+ 90Hz Adaptive Sync Display)<br/>
+Samsung Galaxy M32 (Black, 6GB RAM, 128GB Storage) 6 Months Free Screen Replacement for Prime<br/>
+Samsung Galaxy M12 (Black,4GB RAM, 64GB Storage) 6000 mAh with 8nm Processor | True 48 MP Quad Camera | 90Hz Refresh Rate<br/>
+Samsung Galaxy M12 (Blue,6GB RAM, 128GB Storage) 6 Months Free Screen Replacement for Prime<br/>
+Redmi 9A Sport (Carbon Black, 2GB RAM, 32GB Storage) | 2GHz Octa-core Helio G25 Processor | 5000 mAh Battery<br/>
+Redmi Note 11 (Horizon Blue, 6GB RAM, 128GB Storage)|90Hz FHD+ AMOLED Display | Qualcomm® Snapdragon™ 680-6nm | Alexa Built-in<br/>
+(Renewed) Realme narzo 30 Pro (Blade Sliver, 8GB RAM, 128GB Storage) Without Offer<br/>
+realme narzo 50A (Oxygen Blue , 4GB RAM + 128 GB Storage) Helio G85 Processor | 50MP AI Triple Camera | 6000 mAh Battery<br/>
+Jio Phone Next 32 GB ROM, 2 GB RAM, Blue Smartphone<br/>
+Samsung Galaxy M12 (Black,6GB RAM, 128GB Storage) 6 Months Free Screen Replacement for Prime<br/>
+OPPO A74 5G (Fantastic Purple,6GB RAM,128GB Storage) with No Cost EMI/Additional Exchange Offers<br/>
+Samsung Galaxy M12 (White,4GB RAM, 64GB Storage) 6000 mAh with 8nm Processor | True 48 MP Quad Camera | 90Hz Refresh Rate<br/>
+Nokia 105 Single SIM (Black)<br/>
+Nokia 5310 Dual SIM Feature Phone with MP3 Player, Wireless FM Radio and Rear Camera (White/Red)<br/>
+Nokia 150 (2020) (Black)<br/>
+Lava X2 (2GB RAM, 32GB Storage) - Striped Cyan| Long Lasting 5000 mAh Battery| High Performance Octa Core Processor| Big 6.5 inch Display HD+IPS Notch Display<br/>
+Samsung Galaxy F12 (Sea Green, 4GB RAM, 64GB Storage)<br/>
+Lava X2 (2GB RAM, 32GB Storage) - Striped Blue| Long Lasting 5000 mAh Battery| High Performance Octa Core Processor| Big 6.5 inch Display HD+IPS Notch Display<br/>
+NOKIA 105 Dual SIM (Black)<br/>
+(Renewed) Realme C15 (Power Silver, 4GB RAM, 64GB Storage)<br/>
+I KALL Z3 Green Premium Series Smartphone |4GB|| 32GB| Dual Sim<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1955652362", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1955652362'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>4</td>
+<td>com.qa.testscripts.TC_Amazon_002@5ba3f27a</td></tr>
+<tr>
+<td title='com.qa.testscripts.TC_Amazon_002.searchItem()'><b>searchItem</b><br>Test class: com.qa.testscripts.TC_Amazon_002<br>Parameters: Baby, Baby lotions<br/>
+<a href="#Output-179637288" onClick='toggleBox("Output-179637288", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-179637288" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-179637288">
+The user is not on home page<br/>
+The item is searched<br/>
+Did you mean<br/>
+Baby Dove Rich Moisture Nourishing Baby Lotion 200 ml, With Moisturising Cream, Gentle Care for Baby's Soft Skin<br/>
+goodnessme Certified Organic Moisturizing Baby Face & Body Lotion, 400ml<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace179637288", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace179637288'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false],
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>4</td>
+<td>com.qa.testscripts.TC_Amazon_002@5ba3f27a</td></tr>
+<tr>
+<td title='com.qa.testscripts.TC_Amazon_002.searchItem()'><b>searchItem</b><br>Test class: com.qa.testscripts.TC_Amazon_002<br>Parameters: Books, Da Vinci Code<br/>
+<a href="#Output-400193653" onClick='toggleBox("Output-400193653", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-400193653" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-400193653">
+The user is not on home page<br/>
+The item is searched<br/>
+The Count of Monte Cristo<br/>
+Famous Classic Books By Alexandre Dumas (Set of 2 Books)<br/>
+The Da Vinci Code: (Robert Langdon Book 2)<br/>
+The Da Vinci Code (Abridged Edition)<br/>
+DA VINCI CODE<br/>
+The Da Vinci Code: (Robert Langdon Book 2)+The Lost Symbol: (Robert Langdon Book 3)(Set of 2books)<br/>
+The Da Vinci Code: A Novel: 2 (Robert Langdon)<br/>
+The Da Vinci Code: (Robert Langdon Book 2)+Angels and Demons: (Robert Langdon Book 1)+Digital Fortress(Set of 3books)<br/>
+The Da Vinci Code<br/>
+Breaking the Da Vinci Code<br/>
+Greatest Works of Edgar Allan Poe<br/>
+World's Greatest Short Stories (Deluxe Hardbound Edition)<br/>
+The Da Vinci Code<br/>
+Der Da Vinci Code: Robert Langdon 2<br/>
+The Da Vinci Code<br/>
+The Da Vinci Code<br/>
+Angels and Demons<br/>
+The Da Vinci Code Revisited<br/>
+Davinci Code<br/>
+THE DA VINCI CODE : A QUEST FOR ANSWERS (Hindi) ?????<br/>
+50 World’s Greatest Poems<br/>
+Think & Grow Rich: THE 21st CENTURY EDITION<br/>
+</div>
+</td>
+<td><div><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+... Removed 14 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace400193653", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace400193653'><pre>java.lang.AssertionError: The following asserts failed:
+	expected [true] but found [false]
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+	at com.qa.testscripts.TC_Amazon_002.searchItem(TC_Amazon_002.java:47)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</pre></div></td>
+<td>7</td>
+<td>com.qa.testscripts.TC_Amazon_002@5ba3f27a</td></tr>
+</table><p>
+</body>
+</html>

@@ -1,0 +1,214 @@
+What is an automation Testing?
+
+A software(Automation tool) that used to test another software ( Application under Test).
+
+It is a systematical process of recording(Test design phase) and playing back (Test Execution phase) the user events to validate an application for positive and negative test conditions.
+
+Test Designing + Test Execution + Test Maintenance.
+
+Recording : Test designing : Implementaion phase : QA is expected to write the test code as per the test scenario and test automation guidelines.
+
+Playback : Test Execution : The test code written at the implementation phase is executed against the application on platforms / environments.
+
+user events : Refer to the test case : Step by step instruction to repeat the user requirements against the application.
+
+
+
+Why to choose automation testing over manual testing?
+
+Repetitive task : Regressional Testing, Retesting, Repeated input testing, Compatiablity Testing / Cross browser testing.
+
+SDET:
+-----
+
+1. Selenium (Basic & Advance) 
+2. TestNG 
+3. Apache Maven
+4. GitHub
+5. CICD : Technical Agile
+6. Jenkins
+7. BDD framework (Cucumber + Junit+ Selenium)
+8. API Testing - Rest-assured API
+
+---------------------------------------------------------------------------------
+
+1. Introduction to Selenium:
+2. Configure Selenium in Eclipse IDE
+3. Create the project structure as per Test automation framework guidelines.
+
+Selenium is a Black box functional testing tool used to automate web application
+
+Selenium : Web Application : Selenium IDE, WebDriver, Selenium GRID
+
+Winium : Window based application.
+
+Appium : Mobile based application (Android, ios)
+
+History of Selenium : selenium.dev
+
+
+Components of Selenium:
+
+1. Selenium IDE : Interactive Development Environment which has console to write and run the code. Plug - in with either FF / CHrome / Edge
+
+2. Selenium RC(Remote Control - Outdated) --> > Selenium 2.0 - WebDriver ( 4.0 version) , 3.141.59 (stable) : Used for regressional Testing and cross browser testing.
+
+3. Selenium GRID : Cross platform testing. GRID is only a configuration to un the webdriver code against the different virtual environments.
+
+___________________________________________________________
+
+Introduction to WebDriver : 
+-------------------------
+
+WebDriver is a multi language, Multi platform and multi browser component from a selenium family used to automate a web application.
+
+** WebDriver do not have an interface / IDE.
+
+** It need to be downloaded as a self-contained library based on the choice of programing language.
+
+WebDriver can be downloaded as jar files / collection of jars etc.
+
+We need to choose any java based IDE where web driver can be configured.
+
+1. Eclipse IDE --> For JavaEE developers
+2. Spring test suite
+3. IntelliJ
+
+The above platform are chosen for writing and executing the selenium code.
+
+
+-------------------------------------------------------------------------------------------
+
+Test Automation Process in Selenium: Systemtical approach to automate an application in a Hybrid framework style..
+
+
+
+3 phases:
+
+1. Implementation phase : Test Designing :Writing the test code as per test scenario and test automation guidelines.
+
+Step 1 : analyze the test scenario and identify the test objects.
+
+Step 2 : Create the GUI reference : Create the physical description to identify the elements at the time of execution.
+			1. Understand the locators of each element
+			2. Create the Page Object model --> Object Repository
+** the GUI reference of an object should be maintained into com.qa.pages package.
+
+Step 3 : Create a test script : Test code written as per the test steps.
+			WebDriver API supports with different class / interface --> methods etc.
+
+Step 4 : Customize the test script : Enahance the test script to equip the test code as per the test automation needs and guidelines.
+		Reusablity, Repeated input testing(DDT) / Parameterization , Exception handling, control the flow of execution, check points, looping and conditional statements, generate the test results, capture the screenshot etc.
+
+		Java + WebDriver API + TestNG + Apache poi + Common io + ExtentReports.
+
+Step 5 : Debug the test script : Check the test script foy syntax and logic.
+
+
+2. Execution phase : Test Execution : the code is executed against different envionments
+
+Step 6 : Run the test script : Execute the test code against the application.
+				1. Run the test script individually at the implementation phase.
+				2. Run the test suites (collection of test scripts) --> testng.xml
+				3. Run the testng.xml from pom.xml --> Eclipse IDE / Apache Maven
+				4. Run the pom.xml from CLI --> using run.bat
+				5. Run the pom.xml on Jenkins platform
+Step 7 : Capture the results : Crystal reports post execution for either the test is passed / failed (along with screenshots)
+		** trigger the email to dev for the failed tests. (ExtentReports - pro)
+
+
+3 . Maintenance phase : Test maintenance : Maintain the test artifacts on the remote repository.
+Step 8 : Store the test aritifacts in the GitHub (remote repository) for further colloboration, version control etc.
+	
+
+
+
+What is a test code?
+
+Lines of code written to validate the functionality w.r.to application.
+
+Test code has actions / set of actions to be performed on AUT as per the test case documents.
+
+** Translate the test cases into a test code.
+
+
+Test code is a collection of Test object, Test object description, Methods, Test data & Expected value.
+
+
+Browser --> Url (WebPage) --> WebElements (text fields, button, radio, link etc.) --> UserEvents (Type, Select, click, drapg etc..) --> Data (inputs)
+
+
+Test Object : Object under test / element / WebElement / GUI entity : Type of an element
+Test Object description : How to reach these elements at the run session fo further interaction --> Locator to reach / identify the test object
+Methods : actions : Keyboard / mouse transaction to be performed on the test object
+Test Data : Type / select needs inputs (valid / invalid)
+Expected value : What are the expected results should a tool observe while executing the code.
+
+test automation guidelines:
+
+1. Organized : The test artifacts are expected to be organized.
+2. Optimized : reduce the lines of code
+3. Reusablity : Test code / components of the test code should reusable
+4. Readablity : 
+5. Modularity
+
+
+Hybrid Framework comprises of :
+
+Linear framework + Modular framework + Data Driven framework
+-------------------------------------------------------------------------------------------
+
+
+Test Scenario to automate:
+--------------------------
+
+1. Invoke the browser.
+2. Launch the URL (http://www.amazon.in)
+3. Select the category as "Books"
+4. Enter the "Da vinci code into Search text field
+5. Click the magnifier button
+6. Get all the items loaded based on the search term
+7. Close the browser.
+
+What are the actions to be performed on the browser instance? --> 1,2,& 7
+WebDriver architecture
+WebDriver interface
+Abstract method of WebDriver interface.
+
+What are the actions to be performed on the Elements on the webpage?
+WebElement interface --> Abstract method for performing the user events.
+Locators
+By Class
+PageObjectModel : @FindBy , @FindAll, PageFactory class
+
+What are the expected conditions to be observed?
+
+
+
+How to invoke a browser?
+
+
+1. Define the environment variable fo JSOnn Key & Path of driver executable
+// System.setProperty("Json key","Path of the driver executable");
+
+Example:
+// Chrome browser
+
+JSOn Key: webdriver.chrome.driver
+Path : In the local pc the file location of chromedriver.exe.
+
+
+
+Upcoming topic:
+----------------
+Class Diagram for WebDriver interface.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,161 @@
+Annotations in TestNG:
+
+Annotations are pre-defined class from TestNG library.
+Annotation always starts with @ symbol
+
+A method in class can be annotated such that the execution is controlled by an annotation.
+
+Categorized into 3 types:
+
+1. Annotations for Test fixtures: When a test case has some pre conditions and post conditions should be declared with the following annotation.
+
+Suite --> Test --> Class --> Methods
+
+Pre-conditions always starts with @Before --> Specific annotations that control the execution of a method before  test / class/method
+
+Post-condition always starts with @After -->  Specific annotations that control the execution of a method after test / class/method
+
+
+
+2. Annotation for test case : @Test --> When a method in class declare as @Test, it is called as test case that can exercise a potential functionality.
+** In a class we can one or more methods can be declared as @Test
+** It can also be prioritized, enabled/ disabled, grouping etc.
+
+3. Annotations of customization.
+ --> @Parameters --> read the parameter value from xml file
+---> @DataProvider --> method below this annotation will act as method to source the test data to another method annotated as @Test. ---> Multiple inputs to @Test method sources from an Object[][].
+
+*******************************************************************
+
+@BeforeSuite : The method below this annotation will run when the suite is trigger for executions. --> lOc in the method will always run on the top of any other method in the class structure.
+
+@BeforeTest : The method below this annotation will run once the test is triggered.
+
+If a suite has 2 test --< <test name="test1">
+								 <test name = "test2">
+
+@BeforeClass : The method below this annotation will run once the class gets triggered
+
+@BeforeMethod : The method below this annotation will run before every @Test method.
+
+In a class if we have 2 methods annotated as @Test, then @BeforeMethod will run twice.
+
+
+
+@AfterSuite , @AfterTest, @AfterClass, @AfterMethod --> Run After a suite / test/ class/ method
+
+-------------------------------------------------------
+
+Application  : Internet Banking.
+
+primary functionalities to be automated:
+
+1. FundTransfer 
+2. UtilityBillPayment
+3. CreditCardBillPayment
+
+BeforeClass
+Login()
+
+AfterClass
+Logout()
+
+Before Test
+Invoke the Browser
+
+AfterTest
+Close the Browser
+
+
+
+
+
+__________________________________________________________________
+
+Parameterization while working with Selenium (Selenium + TestNG + Java + Apache Poi)
+------------------------------------------
+
+Why Parameterization?
+The test data / input values should be always maintained in the external sources.
+
+1. As the input values can be changing constantly.
+2. Multipl input combinations
+3. Changed as per the choice / demand
+
+What is parameterization?
+
+It is a mechanism of replacing constants in the code with a parameter / variable.
+
+As the value is routed through a parameter from the external sources, it is called as parameterization.
+
+** Data Driven testing : driving the data / input from external sources.
+
+Single input parameterization
+Repeated input parameterization --> recurrsive input are parsed to the code for repeated / multiple input executions.
+
+
+Types of parameterization?How to implement parameterization into the code?
+
+
+1. Parameterizatio using XML --> @Parameters annotation that can be to above any method uses any TestNG annotation.
+
+@Parameters will read the value of the parameter from the <parameter> tag of an XML and source it to the method below.
+
+*Single input that can parse one value to the method below --> String format.
+
+2. Parameterization using @DataProvider : Repeated inputs.
+
+A method declared as @DataProvier that returns an object[][] can be sourcing the data to another method anntated as @Test
+
+
+
+3. Parameterization using Excel
+
+Apache poi
+
+
+Generic class
+
+
+1. Open the file in an input mode --> FileInputStream --> Java io
+2. The file should be opened as Excel file --> XSSFWorkbook --> apache poi
+3. WorkBook --> Sheet (Name / id) --> Rows --> Cell --> Value.
+
+
+
+4. Parameteriation using Properties
+
+
+******************************************************************************
+
+Asserts in TestNG: Checkpoint in TestNG used to compare the expected values against the actual values.
+
+If both are same it returns the test as passed else it return fail with the differences between expected and actual results.
+
+What can be compared : any type of data of suites primitive datatypes in java.
+
+There are different asseer methods can be filtered based on the type of data to be compared.
+
+In TestNG there are 2 types assert categories
+
+1. Hard Assert : Uses Assert class. If there is mismatch, the test will return fails but the test will be terminated in the line of where the assert is failed.
+
+2. Soft Assert: uses SoftAssert. If there is mismatch, the test will return fails but continue the test execution with the next line in the code
+
+_________________________________________________
+
+Capture the screenshot of the webpage when the test fails.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

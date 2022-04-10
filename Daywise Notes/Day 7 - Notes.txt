@@ -1,0 +1,89 @@
+GitHub:
+-------
+
+What is git and gitHub?
+How to do test maintenance using gitHub?
+**********************************************************************
+
+Git is version control system, helps to maintain the workaroung / artifacts at one common place.
+
+Git : Local Repository
+GitHub : Remote Repository
+
+Git is a revision control system used to track the changes in the files / artifacts. It is a tools to manage the code and other files history while co-ordinating the work remotely on those files with others.
+
+Version Control is a system that records the changes to a file or set of file over time / periodically, so that we can recall specific version later in time.
+
+1. Local Version control system
+2. Centralized version control system
+3. Distribute version control system
+
+
+
+Git : Local : Local VCS
+---------------------------------------
+
+
+Working directory --> Folder to be initialized as git folder --> add the files to staging area --> Commit --> local .git --> Remote gitHub --> clone /pull 
+
+Working directory ---> staging area ---> local .git --> Remote gitHub
+
+
+git init --> initialize the git repository.
+
+git add filename --> add the file contatnet to the statging area
+
+git add . --> add all the untracked files in the folder to a staging area
+
+git commit : records the snapshots at the staging ared.
+
+
+
+
+GitBash : Remote
+GitLab
+GitHub: Remote : Centralized version control system.
+
+--------------------------------------------------------------------------------------------
+
+How to do test maintenance using gitHub?
+How to colloborate the task with in the testing team while implementing the test automation framework
+
+
+TL :
+
+1. Create the project structure that should be uniformly created / used by QAE in PC
+
+2. Push the project into Remote GitHub Location
+
+3. add the QAE as collaborators
+
+4. The collaborators will receive the email notification to access the project in GitHUb
+
+**
+
+5 . Open the PR received by QA and review
+
+6. Merge the content of branch x to the master branch.
+
+
+QA :
+
+1. Email notification to accept the invitation
+2. clone the project from TL github to the local system / ws
+3. Add the code / modify the code
+4. Commit the new code / modified code into a new Branch --> Create branch and commit the changes into the branch
+5. Send the PR (Pull Request to the Author (TL) for review the changes)
+
+…or create a new repository on the command line
+echo "# EMS.TestAutomation" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/JyothiCyril/EMS.TestAutomation.git
+git push -u origin main
+…or push an existing repository from the command line
+git remote add origin https://github.com/JyothiCyril/EMS.TestAutomation.git
+git branch -M main
+git push -u origin main

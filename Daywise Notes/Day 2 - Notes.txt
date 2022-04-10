@@ -1,0 +1,155 @@
+
+Test Scenario to automate:
+--------------------------
+
+1. Invoke the browser.
+2. Launch the URL (http://www.amazon.in)
+3. Select the category as "Books"
+4. Enter the "Da vinci code into Search text field
+5. Click the magnifier button
+6. Get all the items loaded based on the search term
+7. Close the browser.
+
+
+What are the actions to be performed on the browser instance? --> 1,2,& 7
+WebDriver architecture
+WebDriver interface: Abstract method of WebDriver interface.
+
+What are the actions to be performed on the Elements on the webpage?
+WebElement interface --> Abstract method for performing the user events.
+Locators
+By Class
+PageObjectModel : @FindBy , @FindAll, PageFactory class
+
+What are the expected conditions to be observed?
+
+----------------------------------------------------------------
+
+
+Class Diagram for WebDriver interface and its abstract method.
+------------------------------------------------------------------------------------
+
+Object Identification in Selenium :
+
+
+Object is a test object / WebElement.
+
+It a mechanism to identify the element at the time of execution. As the automation tool do not have an intelli sense to reach the elements directly, the programmer / qa has to instruct the tool to reach the element using some unique description.
+
+
+The unique description in Selenium is called as "Locator"
+
+Locator is a unique test object description that will teach the tool the identify the element on the webpage at the time of execution to smoothly perform the user interactions (Keybaord / mouse transactions).
+
+
+Every GUI element have several attributes that are used while desiging the DOM structure of the page.
+
+Amongst the available properties, We should choose the properties / attributes that are defined in the Selenium library as Locators.
+
+Categorized into 2 types:
+
+1. Attribute based locators : Html code
+
+	1. HTML ID : 1st priority : Unique & stable, speed of identifying an element is faster
+
+	2. Name : 2nd Priority * value of the name changes dynamically, can't be used for identification.
+
+	3. ClassName : If the value of class name matches one or more elements. (FindElements())
+* value of class name if it has a space, it can't be used for single / multiple object identification.
+
+	4. LinkText : 3rd prority * used only for locate hyperlinks (elements with <a> tag)
+** as the <a> do not have all the attribute used in it. So whole Text present on the link is used for identification.
+
+	5. PartialLinkText:  used only for locate hyperlinks (elements with <a> tag)
+** as the <a> do not have all the attribute used in it. So sub string of the Text present on the link is used for identification.
+
+	6. TagName : one or more elements with the same tagName : Group of elements with same category.
+
+2. Structure based the attribute d locators : Alternative identification mechanism used when attribute based properties are not sufficient / available. : Rely on the structure of page. Address of an element as per the DOM structure 
+	
+	1. xPath : 4th Priority
+	2. CSS
+
+
+** Locator can match one element at a time / one or more element at a time
+** Need : One Element (findElement() : One locator should match one element_ / Group of elements (findElements() : one locator matches multiple elements on the page.)
+** Single object identification : Locators chosen should be unique in scope & stable by nature
+
+
+
+WebElement on page:
+---------------------
+Type of the element : Observation / tagName
+Locator: inspecting --> By class
+Action: methods from WebElement interface
+Input: test data / value
+
+
+How to fetch the locators from a HTML code and select the appropriate locator for identification:
+
+
+Search Text field : type some value:
+
+HTML code:
+
+<input type="text" id="twotabsearchtextbox" value="" name="field-keywords" autocomplete="off" placeholder="" class="nav-input nav-progressive-attribute" dir="auto" tabindex="0" aria-label="Search">
+
+** Not every attribute is a locator. It should only belong to the category of locators that are pre-defined in the Selenium library.
+
+Ref: By class : 
+
+
+Locators:
+
+1. TagName : input ** One or more element with tagname as input
+2. id : twotabsearchtextbox : 1st priority 
+3. name="field-keywords" : 2nd priority
+4. class="nav-input nav-progressive-attribute" ** not fit for identification
+
+
+
+
+
+<span class="a-size-medium a-color-base a-text-normal">The Da Vinci Code: (Robert Langdon Book 2)</span>
+
+
+<span class="a-size-medium a-color-base a-text-normal">The Da Vinci Code (Abridged Edition)</span>
+
+<span class="a-size-medium a-color-base a-text-normal">The Da Vinci Code</span>
+
+relative xpath using attribute based property:
+
+//TagName[@AttributeName='AttributeValue']
+
+//span[@class='a-size-medium a-color-base a-text-normal']
+
+
+**********************************************************
+
+How to create the pages to store the element description / locators into a page object model.
+
+Page Object Model is a design pattern followed in Selenium to create the Object Repository.
+
+Object Repository is class created for every module / page to store the element description that can be reused to several testcases / test code.
+
+To implement page object model in selenium, we need to use 
+
+@FindBy annotatiod to store the locator into a element reference.
+PageFactory class to initialize all the elements on the pages agaist the driver instance at the run session.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

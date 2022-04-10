@@ -1,0 +1,62 @@
+Reporting mechanism while working with Selenium & TestNG using ExtentReports API.
+
+
+Selenium do not have an in-built mechanism to generate the test results
+
+While TestNG report gets appended on every test execution.
+
+
+Create a generic that can create separate report for every test execution.
+
+Reports folder within the project directory.
+
+
+Generic class should run whenever the test execution is triggered by an testng.xml file.
+
+
+Listeners in TestNG which help to read the test execution of a method annotated as @Test.
+
+Either the test can be passed / failed / Skipped.
+
+Fetch the status of the results and add them to HTML report generated.
+*********************************************
+
+Working with frames
+Working with multiple windows
+Working with alerts
+Working with Actions class
+Working with JavaScriptExecutor - Interface used for Java scripts actions on the pages
+
+ScrollBy actions..
+Vertical bar
+Horizontal bar
+
+scroll by element presence.
+
+--------------------------------------------
+
+
+Synchronization Point: It is a process of matching the anticipated time between the tool and the application.
+
+* Tool is very fast and the application is slow. we need to pause the execution for a while till the desired response is received from an application under test.
+
+1. PageLoadTimeOut --> driver for a page to load completely. Browser only
+2. ImplicitWait --> Driver is initialize and terminated, the implicit wait methos will wait till the element on the browser is visible.
+3. ExplicitWait : Wait inserted in the code and wait untill the action / expected outcome is fetched.
+
+Auto cut off once the desired action is completed. 
+
+40 secs --> 
+
+
+
+
+
+
+
+
+
+
+
+
+

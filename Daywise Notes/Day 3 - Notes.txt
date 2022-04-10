@@ -1,0 +1,194 @@
+2. Structure based the attribute d locators : Alternative identification mechanism used when attribute based properties are not sufficient / available. : Rely on the structure of page. Address of an element as per the DOM structure 
+	
+	1. xPath : 4th Priority
+	2. CSS
+***************************************************************************************
+
+ xPath : expression / syntax with the collection of wildcard chars that can help to specify an address of an element as per the HTML structure of the page.
+
+Where an element is positioned in a HTML DOM structure, is written in a pattern / syntax.
+
+Absolute xPath : Full path / address of an element from the root of the html page. "/" to traverse from root to the child element.
+
+Relative xPath : shortest path / address of an element fetch from the descendents of the element position with in a page. "//" --> travese to the element from the child tag directly.
+
+
+HTML code : where the element is positioned with in a HTML page..
+
+pseudo code:
+------------
+
+<html>
+	<body>
+		<div>
+			<input A>
+			<input B>
+		</div
+		<div>
+			<input C>
+			<input D>
+		</div
+	</body>
+</html>
+
+
+Ex:
+<input type="text" onblur="fieldTrack(this);" name="name7a309ff8" value="" style="width:185px;" maxlength="61">
+
+abs xpath:
+/html/body/center/form/div/table[2]/tbody/tr[3]/td[3]/input
+
+/html/body/center/form/div/table[2]/tbody/tr[3]/td[3]/input
+
+rel xpath :
+//table[2]/tbody/tr[3]/td[3]/input
+//*[@id="tblcrtac"]/tbody/tr[3]/td[3]/input
+
+Relative xpath by attribute:
+----------------------------
+//TagName[@AttributeName='AttributeValue']
+//input[@maxlength='61']
+//*[@AttributeName='AttributeValue']
+//*[@maxlength='61']
+
+
+Relative xpath by text(): 
+-------------------------
+if the element has the text between the open & close tag that can be used for xpath.
+
+Syntax : //tagName[text()='value']
+
+Ex: 
+<div>Submit</div>
+//div[text()='Submit']
+
+//p[text()='Drop here']
+
+
+Relative xpath by contains():
+------------------------------
+//*[contains(text(),'@rediffmail.com')]
+
+--------------------------------------------------------------------------------
+
+CSS:
+
+id / className
+
+#idvalue
+
+.ClassName
+
+table.f14:nth-child(3) tbody:nth-child(1) tr:nth-child(3) td:nth-child(3) > input:nth-child(1)
+-----------------------------------------------------------------------------------
+
+Test Scenario:
+-------------
+
+1. Open the browser
+2. Launch Rediff.com url
+3. click create account link
+4. Enter the full name as "Kim Smith"
+5. Enter the email id as smithTest
+6. click on check availablity button.
+
+******************************************************************************
+
+TestNG : Testing framework used along with Selenium for customization of test code.
+
+
+TestNG : Next Generation is an API / library is desiged and developed to fullfill the test automation needs while working with Selenium
+
+This designed,inspired from Junit API ( Unit testing testing)
+
+1. Configure TestNG in Eclipse.
+2. Configure TestNG library into a project
+
+
+Traslate the Selenium Java code to a Selenium TestNG code.
+
+
+Benefits of using TestNG along with Selenium:
+
+1. Crystal HTML report generated post execution.
+2  Control the flow of test execution
+3. Reusablity of code.
+4. Parallel testing
+5. Cross browser testing
+6. Prioritize the test execution
+7. Enable/ disable test
+9. Asserts : check points
+10. Parameterization : Single (xml file : testng.xml) & repeated input parameterization.
+
+Refer : https://testng.org/doc/
+-------------------------------------------------------------------------------------
+
+Annotations in TestNG
+-----------------------
+
+What is an annotation?
+
+Annotation are the pre-defined meta-data used on the top of non-static method to control the flow of executions.
+
+always starts with '@' symbol.
+
+Categorized into 3 types:
+
+1. Annotations for Test fixtures
+2. Annotation for test case
+3. Annotations of customization.
+
+
+Structure of Test code in Testng.
+
+The execution is controlled by a xml file.
+
+Suite --> Test --> Class --> method
+
+Divide the code into Test Fixtures and Test Cases.
+
+Test Fixtures: we always write the pre & post conditions. Methods exepected to run either before or after a test / class /method.
+Test case : is method will have the important functionalities to be validated. --> Any method declared as @Test is called as test case.
+
+What do we write within a method declared as @Test is a discipline while writing the code.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

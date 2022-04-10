@@ -1,0 +1,251 @@
+Apache Maven:
+-------------
+
+Java based build management tool.
+
+What is build management tool?
+How Maven is used by a developer / Development team in performing build management activity?
+How maven is used by the QA for test automation using Selenium?
+
+_________________________________________________
+
+1. Project structure : Files & folders structures
+2. Maven dependencies library
+3. Pom.xml --> Project  , Dependency , Plugin
+4. Lifecycles of Maven : Clean, Default & Site --> Goals --> Plugin.
+5. What are the Goals & Plugin that a QA can use while using maven project for test automation.
+*******************************************************************************************
+
+Eclipse IDE - Java EE developer has in built maven project : Create, modify and run the maven projects
+
+Apache Maven : controlled from the CLI (command line interface). Need to be downloaded and configured on the local system for execution from CLI.
+
+** When the project are developed by different people remotely, maven projects will enable the team to create and manage the project build in an uniform approach.
+
+--> Arechtype selection --> pre-existing templates from apache maven library used by the developers to create and maintain the project deliverables in an unifom approach.
+
+---------------------------------------------------------------------------------
+What is a build management?
+
+It is a systematical approach to develop a build.
+
+Build is collection of programs.
+
+Java build is collection different java programs.
+
+Build managements is a task to be performed by the group of developers in a systematical and uniform approach.
+
+Steps involved to develop a build.
+
+1. Code : s1.java, s2.java, s3.java
+2. Unit test code
+
+1. Validate
+2. Compile
+3. Test
+4. Build : jar / war/ear
+5. Reporting
+
+
+Apache maven is a build management tool that automates the steps involved in building a java project.
+
+
+1. Create the project : Project should be created with the appropriate folder structures evenly by different programmers in the team.
+	* Create the project using archetype : Default templates in Maven library will have different folder structures added to the project.
+			
+
+
+Group ID
+Artifact id Project A
+Version
+Build format : jar / war/ear/pom/etc//
+
+Example : quickstart archetype
+
+Project A :
+
+src/main/java : code to develop the build is written in this folder.
+src/test/java : for the corresponding code in src/main/java, there will be corresponding unit test code using JUNIT is written in this folder.
+JRE Library : have different jar from the Java library based on the JRE version configured.
+Maven Dependency : library will have the jars downloaded from MVNrepository and store into .m2  folder under local system. The libraries downloaded here will be controlled by the dependencies copied in the pom.xml file of this project.
+src folder --> 2 subfolder main & test : prototypes for src/main/java & src/test/java folders.
+target --> reports, documents and final build post integration will be accomodated here.
+pom.xml --> heart of maven project : control the build management activities for the entire project.
+
+
+3 sections :
+
+1. Project section : will have details of the project created by the user like group id, artifact id, version & packaging details.
+
+2. Dependency : quickstart : Automatically have Junit dependency. Skip the archetype selection will not have dependency section. It should be added manually. 
+** Any dependency added will import/ download the required jar files into MAven depenpencies folder of the current project.
+
+3. Plug-in section : To run the maven project, we need the maven plug-ins. different plugin for different build management activities.
+
+
+Each plugin is  used in accordance to the build life cycle and its GOALS.
+
+
+Clean Life Cycle : Used to clean the previous execution and data from the project repository.
+--------------------------------------------------------------------------------------------
+Goal : Clean
+Command : mvn clean (CLI : Apache Maven / Eclipse IDE)
+Plug in :maven-clean-plugin
+
+
+Default Life Cycle : Used to conduct the build management activity
+------------------------------------------------------------------
+Goal : Validate
+Command : Default command executed when the below goals are executed.
+Plug in : maven-resources-plugin
+Validate the files under src/main/java & src/test/java
+
+
+Goal : Compile
+Command : Default command executed when the below goals are executed.
+Plug in :maven-compiler-plugin
+
+Compile the code written in src/main/java & src/test/java
+* only when there are no compilation errors the further GOALs will be executed.
+
+Goal : Test
+Command : mvn test
+Plug in :maven-surefire-plugin
+Run the test code written under src/test/java.
+
+This plugin runs only when there a testing framework that is configured under dependency
+Developer : Junit dependency
+QA : TestNG dependency.
+
+
+Goal : Build
+Command : mvn build
+Plug in : maven-jar-plugin
+
+build all the java files into a single build (jar /war/ear version) : integrate class files in src/main/java to a single build.
+
+Goal : Install
+command : mvn install
+plug - in : maven-install-plugin
+
+Goal : Deploy
+Command : mvn deploy
+plugin: maven-deploy-plugin
+
+build will be deploy on the current environment.
+
+post integration, build will be executed to check if it is ready to be deployable. Jar will be executed to check if the integration is done correctely.
+******************************************************************
+
+Site Life Cycle : Reporting & documentation
+-------------------------------------------
+
+
+Commnad : mvn generateresource
+plugin : maven-site-plugin & maven-project-info-reports-plugin
+
+create the test execution reports, documentation required post build execution /. it will add documentation to the target folder in the project.
+*************************************************************************************
+
+How maven is used by the QA for test automation using Selenium?
+
+
+1. Creating the maven project will enable the QA members working remotely to work in uniform approach. So that the desired project folders can be created for accomodating different project deliverables.
+
+	>> Test code / test data / configuration / pages / Generic class / Report / Screenshots etc.
+
+Reasons :
+
+1. Uniformity 
+2. Aligned and well maintained folders & files
+3. When the project to be executed on different platforms ex : Jenkins: CICD platform, that is integrated with Maven project. QA to create the project in Maven style
+
+4. When the project to be executed remotely by other QA / Devops etc. , the project should be sufficiently equipped to run against the remote environments. --> pom.xml file.
+
+
+
+
+How to trigger the test execution from pom.xml.
+
+Pre-requisite :
+
+testng.xml file should be created and must be executed.
+required plugin are configured in pom.xml. --> sure-fire plugin.
+testng dependency should be loaded into the pom.xml file. so that sure-fire plugin can recognize the suite that is used testng library.
+
+Run independent file single class file (java / testng test)
+Run the test suite --> testng.xml file --> testng suite.
+run the testng.xml file from pom.xml file using sure-fire plugin --> Eclipse IDE & Apache Maven / run.bat
+Run run.bat file : window batch file  : run the pom.xml --> testng.xml --> test code / class file
+
+
+** Ensure, testng.xml file is stored under src/test/java folder
+
+
+
+*********************************************************************************
+
+Test maintenance : Maintain the test artifacts on the remote repository (GitHub)
+
+Maintaining the test artifacts on the remote repository while collaborating the task done by different user / programmer remotely.
+
+Collaborating the different work aroung done by the group of developers into a common a location  - GitHub(Open Source Remote Repository which can maintain the entire project and its aritifact without distrubing the structure.
+
+At the same time, it can collaboratively accept the changes done to the artifacts by different collaborators and maintain the version control of the changes done to the existing structures.
+
+
+GitHub:
+
+Remote Repository to maintain the project deliverable irrespective of types of files.
+Version control to understand the history of the project on every modification.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
