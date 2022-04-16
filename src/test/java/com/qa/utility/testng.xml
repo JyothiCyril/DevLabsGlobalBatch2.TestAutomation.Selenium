@@ -13,7 +13,7 @@
 		<parameter name="Url" value="http://www.amazon.in/"></parameter>
 		<classes>
 			<class name="com.qa.testscripts.TC_Amazon_002"></class>
-			<class name="com.qa.testscripts.TC_Amazon_003"></class>
+			
 			<class name="com.qa.testscripts.TC_Amazon_004"></class>
 		</classes>
 	</test>
