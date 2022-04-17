@@ -1,0 +1,137 @@
+1. Selenium
+2. Agile process / Methodology : Iterative & Increment approach. 
+Each iteration / sprint is for fixed duration.
+At the end of every iteration there need to be a working software delivered to the customer.
+What is developed today should be tested next day : Developer and Tester are day before and day behind. --> CICD
+
+What is developed against what is tested? is always deviated. To bring the common understand between the development and testing , Kent Beck who introduced Test-First appraoch while eXtreme Programming is designed.
+
+Different levels of testing performed through out the development journey
+
+Unit Testing, Integration Testing , System Testing, User Acceptance Testing --> Each level of testing has different agenda.
+
+Developers : Unit Testing & Integration Testing : White Box Testing where in the internal logic of the code is exercised for its functionality. Objective: Is the code written as per the customer requirements or not.
+
+Testers / QA : System Testing : Black box testing technique, which is done from the GUI / front end of the product. Whole system / application is tested for its completeness and correctness against the client requirement.
+
+End User / Designated business users / PO / BR : User acceptance testing / Sprint Review (Day 14) : To check if the requirements are developed as per the user requirements. To approve the product
+
+Common aspects amongst all the above levels of testing : "User Requirements"
+
+In conventional model, Development plan is different from a testing plan.
+
+What is tested by the Developer may be different from What is tested by a QA & What is tested by PO / end user at UAT level.
+
+
+Why the user stories gets rejected ? If the requirements are not met, the user stories get rejected at UAT / Sprint Review.
+
+Test execution is done after development.
+
+But with TDD approach, the Test execution should be performed before Development.
+
+How can a product be tested without even developed. 
+
+3. Test Driven Development / Test First Appraoch:
+
+JUnit: KentBeck + Eric Gamma : Unit testing API
+
+<------------------------- Red Cycle--------------------------------------------------->
+User stories --> Unit Test cases --> Unit Test methods --> Executed --> Test is failed --> Write the code --> Executed --> Test is Passed --> Refactor(optimize)
+<------Green Cycle------------------------------------>
+
+Customized the TDD approach to an ATDD appraoch.
+
+4. ATDD : Acceptance Test Driven Development --> Development framework used by Programmer
+
+<------------------------- Red Cycle--------------------------------------------------->
+User stories --> Acceptance Criteria --> Unit Test methods --> Executed --> Test is failed --> Write the code (develop the functionality) --> Executed --> Test is Passed --> Refactor(optimize)
+<------Green Cycle------------------------------------>
+
+Developer + QA + PO
+
+Acceptance Criteria : Testable requirement that are exercised by the PO on the day of sprint review.
+
+Given the application developed meets the above testable requirements the product can be signed off successfully.
+
+** Criteria to accept the product is the acceptance criteria.
+
+Acceptance Criteria are written by the PO.
+
+Acceptance criteria are the step by step instructions that repeats the user requirements for the positive and negative test conditions.
+
+Acceptance criteria are written using GHERKINS language. --> Given , When Then format.
+
+Acceptance criteria will be used as the common test artifact by the developer at the unit testing, QA for System testing & PO for Sprint Review or UAT.
+
+While working with Agile model : Whole Team approach : entire team to work collaboratively.
+
+
+5. BDD : Behaviour Driven Development --> Testing framework used by Testing / QA : Test the behaviour of an application is par with acceptance criteria
+
+<------------------------- Red Cycle--------------------------------------------------->
+User stories --> Acceptance Criteria --> System Test methods --> Executed --> Test is failed --> Write the code (Test the functionality) --> Executed --> Test is Passed --> Refactor(optimize)
+<------Green Cycle------------------------------------>
+
+
+
+*********************************************************************************************
+Behaviour Driven Development framework:
+
+Workflow of BDD
+Configure the project that can perform BDD framework
+How to create the feature file using GHERKINS
+How to create the runner class
+How dryRun the code to generate the code snippet
+Create the step definitions and trigger the execution from runner class
+Add the selenium code to the step definition class
+Parameterization using single input and multiple (using Scenarion outline and examples)
+Hooks --> Test fixtures using @Before and @After from cucumber
+Tags : create and run the specific tags from the runner class.
+
+
+#Author: your.email@your.domain.com
+#Keywords Summary :
+#Feature: List of scenarios.
+#Scenario: Business rule through list of steps with arguments.
+#Given: Some precondition step
+#When: Some key actions
+#Then: To observe outcomes or validation
+#And,But: To enumerate more Given,When,Then steps
+#Scenario Outline: List of steps for data-driven as an Examples and <placeholder>
+#Examples: Container for s table
+#Background: List of steps run before each of the scenarios
+#""" (Doc Strings)
+#| (Data Tables)
+#@ (Tags/Labels):To group Scenarios
+#<> (placeholder)
+#""
+## (Comments)
+#Sample Feature Definition Template
+@tag
+Feature: Title of your feature
+  I want to use this template for my feature file
+
+  @tag1
+  Scenario: Title of your scenario
+    Given I want to write a step with precondition
+    And some other precondition
+    When I complete action
+    And some other action
+    And yet another action
+    Then I validate the outcomes
+    And check more outcomes
+
+  @tag2
+  Scenario Outline: Title of your scenario outline
+    Given I want to write a step with <name>
+    When I check for the <value> in step
+    Then I verify the <status> in step
+
+    Examples: 
+      | name  | value | status  |
+      | name1 |     5 | success |
+      | name2 |     7 | Fail    |
+
+
+
+
