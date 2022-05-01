@@ -1,0 +1,73 @@
+WebService Testing (API Testing) using Rest-Assured.
+----------------------------------------------------
+
+WebService :
+
+When 2 web application need to communicate to request and respond based on query.
+
+Client - server architecture.
+
+Client : service consumer which need to request the data / infomation from the server
+Server : service provider which sources the response based on the request from a client.
+
+Service provider will host the required information that can be fetched from a server on the another API (acts as a mediator between client and server)
+
+The information hosted by the server can be in the form XML  / JSON format.
+
+and the Client need to retrieve the information by sending query in a machine understandable language.
+
+
+Server will host the information either in WSDL (Web Services Descriptive Language) and there will be an online registry called UDDI created to fetch the information from a WSDL which is in the XML format.
+
+
+Medium : Http / internet
+Format : XML / Json etc.
+
+
+CRUD : Create / Retrieve / Update / Delete
+
+
+Types of WebServices:
+
+1. SOAP service : Simple Object Access Protocol
+
+Medium : Http (POST method)
+Format : XML 
+
+
+W3C it is a community where the standards are pre-defined that are been categories into basice and advance.
+
+Any web service that meets all the basic standards that are defined by the W3C internation body will be called as SOAP Webservice
+
+
+
+2. REST service : Representation State Transfer.
+
+Medium : Http (GET , POST , PUT, DELETE etc)
+Format : XML / JSON / Text.
+
+
+1. Uniform Interface
+		1.1 Resources (Module)
+		1.2 URi (uniform resource identifier): URL parsed to fetch the data as per the query
+		1.3 HTTP method : GET / POST / PUT / DELETE etc.
+2. statelessness
+3. Cacheable
+4. Layered
+5. Code on demand.
+
+Every HTTP methods will have a response code
+
+Rest Assured is an open source API tool used to test the RESTful service.
+
+Pre-reuisite :
+
+We need to have an URI
+HTTP method to be triggered
+How to validate the response code.
+
+------------------------------------------------------
+
+Rest- Assured tool is a self-contained library that need to be configured into Eclipse IDE.
+
+
